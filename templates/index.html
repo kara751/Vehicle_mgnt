@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+{% if messages %}
+{% for message in messages%}
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+  <strong style="color: red;">{{message}}</strong>
+  You can view it on <a href="{% url 'vehicle' %}">Vehicle List</a>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+{% endif %}   
+<form method="post" class="form1">
+{% csrf_token %}
+    <label for="name">
+        Car's Name <input type="text" id="name" name="carname" required>
+    </label>
+    <label for="color">
+        Color <input type="text" id="color" name="color" required>
+    </label>
+    <label for="capacity">
+        Capacity <input type="number" id="capicity" name="capacity" required>
+    </label>
+    <label for="address">
+        Owner Name <input type="text" id="address" name="ownname" required>
+    </label>
+    <label for="speed">
+        Speed <input type="number" id="speed" name="speed" required>
+    </label>
+
+    <label for="enginestats">
+        Engine Status <input type="text" id="enginestats" name="engine" required>
+    </label>
+
+    <label for="fuellevel">
+        Fuel Level <input type="number" id="fuellevel" name="fuel" required>
+    </label>
+
+    <label for="avgspeed">
+        Average Speed <input type="number" id="avgspeed" name="avgspeed" required>
+    </label>
+
+    <label for="temp">
+        Temperature <input type="number" id="temp" name="temp" required>
+    </label>
+
+    <input type="submit" value="Add Vehicle">
+
+</form>
+{% endblock %}

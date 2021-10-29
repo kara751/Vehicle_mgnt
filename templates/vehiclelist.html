@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<table>
+  <tr>
+  <th>Car Name</th>
+  <th>Owner Name</th>
+  <th>Color</th>
+  <th>Capacity</th>
+  <th>Speed</th>
+  <th>Avg</th>
+  <th>Action</th>
+  </tr>
+  {% for item in items reversed %}  
+  <tr class="tr2">
+  <td><a href="{% url 'detail' item.pk %}" class="detname">{{item.name}}</a></td>
+  <td>{{item.ownername}}</td>
+  <td>{{item.color}}</td>
+  <td>{{item.capacity}}</td>
+  <td>{{item.speed}}</td>
+  <td>{{item.avgspeed}}</td>
+  <td><a href="{% url 'update' item.pk %}"><input type="button" value="Edit" class="edit"></a> <a href={% url 'delete' item.id %}><input type="button" value="Delete" class="del"></a></td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

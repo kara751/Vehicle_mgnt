@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<div class="details">
+<div class="btns">
+    <div class="circle">
+    </div>
+    <input type="button" value="Camera 1" class="camera1">
+    <input type="button" value="Camera 2" class="camera2">
+    <input type="button" value="OFF" class="off">
+    <input type="button" value="ON" class="on">
+    </div>
+    <div class="map"><h2>Static map</h2><img src="{% static 'images/maps.gif'%}"></div>
+    <div class="speed"><h2>Speed</h2> <h3>{{ det.speed }} kmph</h3></div>
+    <div class="avgspeed"><h2>Average Speed</h2> <h3>{{ det.avgspeed }} kmph</h3></div>
+    <div class="engstatus"><h2>Engine Status</h2> <h3>{{ det.enginestats }}</h3></div>
+    <div class="fuelevel"><h2>Fuel Level</h2> <h3>{{ det.fuellevel }} litre</h3></div>
+    <div class="temp"><h2>Temperature</h2> <h3>{{ det.temp }}°C</h3></div>
+
+</div>
+{% endblock %}

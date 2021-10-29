@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<form method="post" class="form1">
+{% csrf_token %}
+    <label for="name">
+        Car's Name <input type="text" id="name" name="carname" required value="{{ updt.name }}">
+    </label>
+    <label for="color">
+        Color <input type="text" id="color" name="color" required value="{{ updt.color }}">
+    </label>
+    <label for="capacity">
+        Capacity <input type="number" id="capicity" name="capacity" required value="{{ updt.capacity }}">
+    </label>
+    <label for="address">
+        Owner Name <input type="text" id="address" name="ownname" required value="{{ updt.ownername }}">
+    </label>
+    <label for="speed">
+        Speed <input type="number" id="speed" name="speed" required value="{{ updt.speed }}">
+    </label>
+
+    <label for="enginestats">
+        Engine Status <input type="text" id="enginestats" name="engine" required value="{{ updt.engine }}">
+    </label>
+
+    <label for="fuellevel">
+        Fuel Level <input type="number" id="fuellevel" name="fuel" required value="{{ updt.fuel }}">
+    </label>
+
+     <label for="avgspeed">
+        Average Speed <input type="number" id="avgspeed" name="avgspeed" required>
+    </label>
+
+    <label for="temp">
+        Temperature <input type="number" id="temp" name="temp" required>
+    </label>
+
+    <input type="submit" value="Update Vehicle">
+
+</form>
+{% endblock %}
